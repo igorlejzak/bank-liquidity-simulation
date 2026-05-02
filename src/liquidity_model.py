@@ -12,8 +12,15 @@ class LiquidityModel:
         path = [cash]
 
         for _ in range(self.days):
-            withdrawal = np.random.uniform(0.001, 0.010) * self.total_deposits
-            deposit = np.random.uniform(0.002, 0.012) * self.total_deposits
+            stress = np.random.random() < 0.05  # 5% szans na stresowy dzień
+
+            if stress:
+                withdrawal = np.random.uniform(0.010, 0.020) * self.total_deposits
+                deposit = np.random.uniform(0.003, 0.006) * self.total_deposits
+            else:
+                withdrawal = np.random.uniform(0.003, 0.008) * self.total_deposits
+                deposit = np.random.uniform(0.003, 0.009) * self.total_deposits
+
             cash = cash - withdrawal + deposit
             path.append(cash)
 

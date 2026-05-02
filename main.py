@@ -10,10 +10,10 @@ def main():
     model = LiquidityModel(
         total_deposits=total_deposits,
         buffer_ratio=0.20,
-        days=90
+        days=1000
     )
 
-    paths = [model.simulate_path() for _ in range(100)]
+    paths = [model.simulate_path() for _ in range(1000)]
     plot_simulation(paths, buffer_line=total_deposits * 0.20)
 
 

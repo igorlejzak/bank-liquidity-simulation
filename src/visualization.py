@@ -20,7 +20,7 @@ def plot_simulation(paths, buffer_line):
 
     plt.xlabel("Day")
     plt.ylabel("Liquidity buffer")
-    plt.title("Bank Liquidity Simulation - 90 days")
+    plt.title("Bank Liquidity Simulation - 1000 days")
     plt.legend()
     plt.tight_layout()
     plt.show()
